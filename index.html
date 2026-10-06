@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="hu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Melós Testvériség</title>
+<link rel="canonical" href="https://csatlakozz.melostestveriseg.hu/">
+<script>
+/*
+  A régi landing.melostestveriseg.hu címei → az új oldal (2026-10-06).
+  A régi oldal idegen Railway-fiókban fut, a domaint onnan nem lehet elvinni, ezért az átirányítás itt, GitHub Pages-en él.
+  Ugyanaz a térkép, mint a csatlakozz `src/middleware.ts`-ében. A hirdetési paraméterek (utm_*, fbclid) megmaradnak.
+*/
+(function () {
+  var UJ = "https://csatlakozz.melostestveriseg.hu";
+  var p = location.pathname.toLowerCase().replace(/\/+$/, "") || "/";
+  var cel = UJ + "/";
+  var visz = true;
+  if (p === "/koszonet" || p === "/koszonjuk") { cel = UJ + "/koszonjuk"; visz = false; }
+  else if (p === "/aszf") cel = UJ + "/aszf";
+  else if (p === "/adatvedelem") cel = UJ + "/adatvedelem";
+  else if (p === "/belepes") { cel = "https://melostestveriseg.circle.so/"; visz = false; }
+  else if (p === "/profil" || p.indexOf("/profil/") === 0 || p === "/lemondas-form") { cel = "https://billing.stripe.com/p/login/00wbJ3ctdfQg3qz1w9fbq00"; visz = false; }
+  location.replace(cel + (visz ? location.search : "") + (visz ? location.hash : ""));
+})();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=https://csatlakozz.melostestveriseg.hu/"></noscript>
+</head>
+<body style="font-family:system-ui,sans-serif;padding:24px">
+<p>Átirányítás a Melós Testvériség oldalára… Ha nem történik meg, <a href="https://csatlakozz.melostestveriseg.hu/">kattints ide</a>.</p>
+</body>
+</html>
